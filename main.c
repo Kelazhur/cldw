@@ -18,7 +18,20 @@ int index=0;
         printf("请选择相应功能\n");
         int code;
         scanf("%d", &code);
-        if (code==1){}
+        if (code==1){
+            printf("请输入车辆位置的x坐标和y坐标：\n");
+            int x;
+            int y;
+            scanf("%d", &x);
+            scanf("%d", &y);
+            arr[index].x=x;
+            arr[index].y=y;
+            index++;
+            printf("添加完成，点击回车继续\n");
+            char enter;
+            scanf("%c",&enter);
+            scanf("%c",&enter);
+        }
         if (code==2){}
         if (code==3){}
         if (code==4){}

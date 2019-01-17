@@ -22,7 +22,10 @@ int index=0;
         if (code==2){}
         if (code==3){}
         if (code==4){}
-        if (code==5){}
+        if (code==5){
+            printf("正在退出应用……\n");
+            break;
+        }
     }
     return 0;
 }

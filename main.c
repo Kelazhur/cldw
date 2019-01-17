@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 struct Point
 {
     int x;
@@ -18,7 +19,8 @@ int index=0;
         printf("请选择相应功能\n");
         int code;
         scanf("%d", &code);
-        if (code==1){
+        if (code==1)
+        {
             printf("请输入车辆位置的x坐标和y坐标：\n");
             int x;
             int y;
@@ -32,7 +34,8 @@ int index=0;
             scanf("%c",&enter);
             scanf("%c",&enter);
         }
-        if (code==2){
+        if (code==2)
+        {
             if(index>0)
             {
                 printf("正在删除车辆位置……\n");
@@ -47,7 +50,8 @@ int index=0;
             scanf("%c",&enter);
             scanf("%c",&enter);
         }
-        if (code==3){
+        if (code==3)
+        {
             if(index>0)
             {
                 printf("所有车辆位置如下：\n");
@@ -65,8 +69,34 @@ int index=0;
             scanf("%c",&enter);
             scanf("%c",&enter);
         }
-        if (code==4){}
-        if (code==5){
+        if (code==4)
+        {
+            printf("请输入当前位置坐标：\n");
+            int x;
+            int y;
+            scanf("%d",&x);
+            scanf("%d",&y);
+            double min=100000;
+            int carID=0;
+            for(int i=0;i<index;i++)
+            {
+                int dx=x-arr[i].x;
+                int dy=y-arr[i].y;
+                double l=sqrt(dx*dx+dy*dy);
+                if(min>l)
+                {
+                    min=l;
+                    carID=i;
+                }
+            }
+            printf("用户当前位置与第%d个车的距离为%lf，是最小距离\n",carID+1,min);
+            printf("点击回车继续\n");
+            char xx;
+            scanf("%c", &xx);
+            scanf("%c", &xx);
+        }
+        if (code==5)
+        {
             printf("正在退出应用……\n");
             break;
         }
